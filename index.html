@@ -467,240 +467,191 @@
 </div>
 </section>
 <!-- Depoimentos -->
-        <script>
-<section class="py-20 bg-white" id="depoimentos">
-  <div class="container mx-auto px-4">
-
-    <!-- Título -->
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-primary-blue section-title mb-4">O que nossos clientes dizem</h2>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        Veja os depoimentos de quem já confiou em nossos serviços
-      </p>
-    </div>
-
-    <!-- CARROSSEL -->
-    <div class="relative w-full overflow-hidden mb-12">
-      <div id="carrosselDepoimentos" class="flex space-x-6 transition-transform duration-500 ease-in-out">
-        <!-- Depoimentos originais -->
-        <div class="testimonial-card card shadow-lg p-6 min-w-[85%] md:min-w-[45%] lg:min-w-[30%]">
-          <div class="flex items-center mb-4">
-            <div class="avatar placeholder mr-4">
-              <div class="bg-primary-blue text-white rounded-full w-12 flex items-center justify-center">
-                <span class="text-xl">MR</span>
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-primary-blue">Maria Rosa</h4>
-              <div class="text-primary-gold">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-          <p class="text-gray-600 italic">"Excelente serviço! Resolveram meu problema elétrico rapidamente e com muito profissionalismo. Recomendo para todos!"</p>
+        <section class="py-20 bg-white" id="depoimentos">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-primary-blue section-title mb-4">O que nossos clientes dizem</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Veja os depoimentos de quem já confiou em nossos serviços
+            </p>
         </div>
 
-        <div class="testimonial-card card shadow-lg p-6 min-w-[85%] md:min-w-[45%] lg:min-w-[30%]">
-          <div class="flex items-center mb-4">
-            <div class="avatar placeholder mr-4">
-              <div class="bg-primary-blue text-white rounded-full w-12 flex items-center justify-center">
-                <span class="text-xl">JS</span>
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-primary-blue">João Silva</h4>
-              <div class="text-primary-gold">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-          <p class="text-gray-600 italic">"Pontualidade e qualidade impecáveis. Instalaram toda a parte elétrica da minha casa. Muito satisfeito!"</p>
+        <!-- FORMULÁRIO PARA NOVOS DEPOIMENTOS -->
+        <div class="max-w-xl mx-auto mb-12 p-6 shadow-lg rounded-2xl border">
+            <h3 class="text-2xl font-semibold text-primary-blue mb-4 text-center">Deixe seu comentário</h3>
+
+            <form id="formComentario" class="space-y-5">
+
+                <input id="nome" type="text" placeholder="Seu nome"
+                    class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary-blue" required />
+
+                <textarea id="comentario" rows="4" placeholder="Seu depoimento"
+                    class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary-blue" required></textarea>
+
+                <!-- ESTRELAS -->
+                <div class="text-center">
+                    <p class="mb-2 text-primary-blue font-semibold">Sua avaliação:</p>
+                    <div id="starRating" class="flex justify-center gap-2 text-3xl cursor-pointer">
+                        <span data-star="1" class="star">★</span>
+                        <span data-star="2" class="star">★</span>
+                        <span data-star="3" class="star">★</span>
+                        <span data-star="4" class="star">★</span>
+                        <span data-star="5" class="star">★</span>
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-primary-blue text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-800 transition">
+                    Enviar comentário
+                </button>
+            </form>
         </div>
 
-        <div class="testimonial-card card shadow-lg p-6 min-w-[85%] md:min-w-[45%] lg:min-w-[30%]">
-          <div class="flex items-center mb-4">
-            <div class="avatar placeholder mr-4">
-              <div class="bg-primary-blue text-white rounded-full w-12 flex items-center justify-center">
-                <span class="text-xl">AC</span>
-              </div>
-            </div>
-            <div>
-              <h4 class="font-bold text-primary-blue">Ana Costa</h4>
-              <div class="text-primary-gold">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-          <p class="text-gray-600 italic">"Atendimento 24h salvou minha empresa! Problema resolvido em poucas horas. Equipe muito competente."</p>
+        <!-- CARROSSEL DINÂMICO -->
+        <div class="relative overflow-hidden">
+            <div id="carouselDepoimentos" class="flex transition-transform duration-500"></div>
+
+            <!-- BOTÕES -->
+            <button id="prev"
+                class="absolute top-1/2 -translate-y-1/2 left-2 bg-primary-blue text-white px-3 py-2 rounded-full shadow">
+                ❮
+            </button>
+            <button id="next"
+                class="absolute top-1/2 -translate-y-1/2 right-2 bg-primary-blue text-white px-3 py-2 rounded-full shadow">
+                ❯
+            </button>
         </div>
-
-      </div>
-
-      <!-- BOTOES -->
-      <button id="prevBtn" class="absolute top-1/2 left-0 -translate-y-1/2 bg-primary-blue text-white px-4 py-3 rounded-full shadow-lg">
-        ❮
-      </button>
-
-      <button id="nextBtn" class="absolute top-1/2 right-0 -translate-y-1/2 bg-primary-blue text-white px-4 py-3 rounded-full shadow-lg">
-        ❯
-      </button>
     </div>
-
-    <!-- FORMULÁRIO -->
-    <div class="max-w-xl mx-auto bg-gray-100 p-6 shadow-lg rounded-2xl">
-      <h3 class="text-primary-blue text-2xl font-bold mb-4 text-center">Deixe seu depoimento</h3>
-
-      <input id="nomeComentario" type="text" placeholder="Seu nome"
-             class="w-full p-3 mb-3 border rounded-lg">
-
-      <textarea id="textoComentario" placeholder="Conte sua experiência..."
-                class="w-full p-3 h-28 border rounded-lg"></textarea>
-
-      <button id="btnEnviarComentario"
-              class="w-full mt-4 bg-primary-gold font-bold text-black py-3 rounded-lg">
-        Enviar Depoimento
-      </button>
-    </div>
-
-  </div>
 </section>
 
-                
-                
-// Só inicia depois que o DOM está carregado
-document.addEventListener("DOMContentLoaded", () => {
-
-    const track = document.getElementById("carrosselDepoimentos");
-    const prev = document.getElementById("prevBtn");
-    const next = document.getElementById("nextBtn");
-
-    let pos = 0;
-
-    function slide(direction) {
-        const itemWidth = track.children[0].offsetWidth + 24;
-
-        if (direction === "next" && Math.abs(pos) < (track.children.length - 1) * itemWidth) {
-            pos -= itemWidth;
-        } else if (direction === "prev" && pos < 0) {
-            pos += itemWidth;
-        }
-
-        track.style.transform = `translateX(${pos}px)`;
+<style>
+    .star {
+        color: #ccc;
     }
 
-    next.addEventListener("click", () => slide("next"));
-    prev.addEventListener("click", () => slide("prev"));
+    .star.selected {
+        color: #fbc02d;
+    }
 
-    /* ---------- AVALIAÇÃO COM ESTRELAS ---------- */
+    .testimonial-box {
+        min-width: 100%;
+        padding: 25px;
+    }
 
-    let estrelasSelecionadas = 5; // padrão
+    @media (min-width: 768px) {
+        .testimonial-box {
+            min-width: 50%;
+        }
+    }
 
-    const estrelas = document.querySelectorAll(".estrela");
+    @media (min-width: 1024px) {
+        .testimonial-box {
+            min-width: 33.33%;
+        }
+    }
+</style>
 
-    estrelas.forEach((estrela, index) => {
-        estrela.addEventListener("click", () => {
-            estrelasSelecionadas = index + 1;
-
-            estrelas.forEach((e, i) => {
-                if (i <= index) {
-                    e.classList.remove("text-gray-400");
-                    e.classList.add("text-primary-gold");
-                } else {
-                    e.classList.remove("text-primary-gold");
-                    e.classList.add("text-gray-400");
-                }
-            });
+<script>
+    // ------ SISTEMA DE ESTRELAS ------
+    let selectedStars = 0;
+    document.querySelectorAll("#starRating .star").forEach(star => {
+        star.addEventListener("click", () => {
+            selectedStars = star.dataset.star;
+            updateStars();
         });
     });
 
-    /* ---------- CARREGAR COMENTÁRIOS ---------- */
-
-    function carregarComentarios() {
-        const armazenados = JSON.parse(localStorage.getItem("depoimentos")) || [];
-
-        armazenados.forEach(c => {
-            const div = document.createElement("div");
-            div.className = "testimonial-card card shadow-lg p-6 min-w-[85%] md:min-w-[45%] lg:min-w-[30%]";
-
-            div.innerHTML = `
-            <div class="flex items-center mb-4">
-                <div class="avatar placeholder mr-4">
-                    <div class="bg-primary-blue text-white rounded-full w-12 flex items-center justify-center">
-                        <span class="text-xl">${c.iniciais}</span>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-bold text-primary-blue">${c.nome}</h4>
-                    <div class="text-primary-gold">
-                        ${"★".repeat(c.estrelas)}${"☆".repeat(5 - c.estrelas)}
-                    </div>
-                </div>
-            </div>
-            <p class="text-gray-600 italic">"${c.texto}"</p>
-            `;
-            track.appendChild(div);
+    function updateStars() {
+        document.querySelectorAll("#starRating .star").forEach(star => {
+            star.classList.remove("selected");
+            if (star.dataset.star <= selectedStars) {
+                star.classList.add("selected");
+            }
         });
     }
 
-    carregarComentarios();
-      
-    /* ---------- ENVIAR COMENTÁRIO ---------- */
+    // ------ SALVAMENTO LOCAL ------
+    function salvarComentarioLocal(data) {
+        const lista = JSON.parse(localStorage.getItem("depoimentos")) || [];
+        lista.push(data);
+        localStorage.setItem("depoimentos", JSON.stringify(lista));
+    }
 
-    document.getElementById("btnEnviarComentario").addEventListener("click", () => {
-        const nome = document.getElementById("nomeComentario").value.trim();
-        const texto = document.getElementById("textoComentario").value.trim();
+    function carregarComentarios() {
+        return JSON.parse(localStorage.getItem("depoimentos")) || [];
+    }
 
-        if (!nome || !texto) {
-            alert("Por favor, preencha seu nome e comentário.");
+    // ------ GERAR HTML DO CARROSSEL ------
+    function renderizarCarousel() {
+        const container = document.getElementById("carouselDepoimentos");
+        const lista = carregarComentarios();
+
+        container.innerHTML = "";
+
+        lista.forEach(dep => {
+            const box = `
+                <div class="testimonial-box">
+                    <div class="shadow-lg rounded-xl p-6 bg-white">
+                        <h4 class="font-bold text-primary-blue text-xl mb-2">${dep.nome}</h4>
+                        <div class="text-primary-gold mb-2">
+                            ${"★".repeat(dep.estrelas)}${"☆".repeat(5 - dep.estrelas)}
+                        </div>
+                        <p class="text-gray-600 italic">"${dep.comentario}"</p>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += box;
+        });
+    }
+
+    // ------ FORMULÁRIO ------
+    document.getElementById("formComentario").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const nome = document.getElementById("nome").value;
+        const comentario = document.getElementById("comentario").value;
+
+        if (selectedStars === 0) {
+            alert("Por favor, selecione uma quantidade de estrelas.");
             return;
         }
 
-        const iniciais = nome.split(" ").map(p => p[0]).join("").slice(0,3).toUpperCase();
-
-        const novo = {
+        const data = {
             nome,
-            texto,
-            iniciais,
-            estrelas: estrelasSelecionadas
+            comentario,
+            estrelas: parseInt(selectedStars)
         };
 
-        const salvos = JSON.parse(localStorage.getItem("depoimentos")) || [];
-        salvos.push(novo);
-        localStorage.setItem("depoimentos", JSON.stringify(salvos));
+        salvarComentarioLocal(data);
+        renderizarCarousel();
 
-        location.reload();
+        e.target.reset();
+        selectedStars = 0;
+        updateStars();
     });
 
-});
+    // ------ CONTROLES DO CARROSSEL ------
+    let deslocamento = 0;
+    document.getElementById("next").onclick = () => mover(1);
+    document.getElementById("prev").onclick = () => mover(-1);
+
+    function mover(direcao) {
+        const container = document.getElementById("carouselDepoimentos");
+        const total = container.children.length;
+
+        if (total === 0) return;
+
+        deslocamento += direcao;
+
+        if (deslocamento < 0) deslocamento = total - 1;
+        if (deslocamento >= total) deslocamento = 0;
+
+        container.style.transform = `translateX(-${deslocamento * 100}%)`;
+    }
+
+    // Iniciar carrossel carregando dados salvos
+    renderizarCarousel();
 </script>
-      <!-- BOTOES -->
-      <button id="prevBtn" class="absolute top-1/2 left-0 -translate-y-1/2 bg-primary-blue text-white px-4 py-3 rounded-full shadow-lg">
-        ❮
-      </button>
-
-      <button id="nextBtn" class="absolute top-1/2 right-0 -translate-y-1/2 bg-primary-blue text-white px-4 py-3 rounded-full shadow-lg">
-        ❯
-      </button>
-    </div>
-
-    <!-- FORMULÁRIO -->
-    <div class="max-w-xl mx-auto bg-gray-100 p-6 shadow-lg rounded-2xl">
-      <h3 class="text-primary-blue text-2xl font-bold mb-4 text-center">Deixe seu depoimento</h3>
-
-      <input id="nomeComentario" type="text" placeholder="Seu nome"
-             class="w-full p-3 mb-3 border rounded-lg">
-
-      <textarea id="textoComentario" placeholder="Conte sua experiência..."
-                class="w-full p-3 h-28 border rounded-lg"></textarea>
-
-      <button id="btnEnviarComentario"
-              class="w-full mt-4 bg-primary-gold font-bold text-black py-3 rounded-lg">
-        Enviar Depoimento
-      </button>
-    </div>
-
-  </div>
-</section>
 <!-- Contato -->
 <section class="py-20 bg-primary-blue text-white" id="contato">
 <div class="container mx-auto px-4">
